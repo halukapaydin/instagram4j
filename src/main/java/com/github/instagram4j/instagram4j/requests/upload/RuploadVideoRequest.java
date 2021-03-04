@@ -56,7 +56,7 @@ public class RuploadVideoRequest extends IGPostRequest<IGResponse> {
 
     @Override
     public RequestBody getRequestBody(IGClient client) {
-        return RequestBody.create(videoData, MediaType.get("application/octet-stream"));
+        return RequestBody.create(MediaType.get("application/octet-stream"), videoData);
     }
 
     @Override

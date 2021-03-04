@@ -24,15 +24,15 @@ repositories {
 
 dependencies {
     // OkHttp
-    api 'com.squareup.okhttp3:okhttp:4.7.2'
-    api 'com.squareup.okhttp3:okhttp-urlconnection:4.7.2'
+    api 'com.squareup.okhttp3:okhttp:3.14.9'
+    api 'com.squareup.okhttp3:okhttp-urlconnection:3.14.9'
     // jackson data-bind
     api 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
     api 'com.fasterxml.jackson.core:jackson-annotations:2.11.0'
     api 'org.slf4j:slf4j-api:1.7.30'
     // Test utilities
     testImplementation 'org.slf4j:slf4j-log4j12:1.7.30'
-    testImplementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    testImplementation 'com.squareup.okhttp3:logging-interceptor:3.14.9'
     testImplementation 'log4j:log4j:1.2.17'
     testImplementation 'junit:junit:4.12'
     testImplementation 'pl.pragmatists:JUnitParams:1.1.1'
@@ -80,14 +80,14 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:git://github.com/instagram4j/instagram4j.git"
-                    developerConnection = "scm:git:ssh://github.com:instagram4j/instagram4j.git"
-                    url = "https://github.com/instagram4j/instagram4j/tree/master"
+                    connection = "scm:git:git://github.com/halukapaydin/instagram4j.git"
+                    developerConnection = "scm:git:ssh://github.com:halukapaydin/instagram4j.git"
+                    url = "https://github.com/halukapaydin/instagram4j/tree/master"
                 }
             }
         }
     }
-}
+ }
 
 bintray {
     user = project.findProperty('bintray_user') ?: System.getenv('BINTRAY_USER')

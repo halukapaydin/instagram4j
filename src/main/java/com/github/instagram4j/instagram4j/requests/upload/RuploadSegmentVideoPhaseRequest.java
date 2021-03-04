@@ -73,7 +73,7 @@ public class RuploadSegmentVideoPhaseRequest extends IGPostRequest<IGResponse> {
     @Override
     public RequestBody getRequestBody(IGClient client) {
         return phase == Phase.TRANSFER
-                ? RequestBody.create(body, MediaType.get("application/octet-stream"))
+                ? RequestBody.create(MediaType.get("application/octet-stream"), body)
                 : super.getRequestBody(client);
     }
 

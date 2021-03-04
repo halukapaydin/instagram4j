@@ -31,17 +31,17 @@ public abstract class IGPostRequest<T extends IGResponse> extends IGRequest<T> {
 
     protected RequestBody getRequestBody(IGClient client) {
         if (getPayload(client) == null) {
-            return RequestBody.create("", null);
+            return RequestBody.create(null, "");
         }
         String payload = IGUtils.objectToJson(getPayload(client) instanceof IGPayload
                 ? client.setIGPayloadDefaults((IGPayload) getPayload(client))
                 : getPayload(client));
         log.debug("Payload : {}", payload);
         if (isSigned()) {
-            return RequestBody.create(IGUtils.generateSignature(payload),
-                    MediaType.parse("application/x-www-form-urlencoded; charset=UTF-8"));
+            return RequestBody.create(MediaType.parse("application/x-www-form-urlencoded; charset=UTF-8"),
+                    IGUtils.generateSignature(payload));
         } else {
-            return RequestBody.create(payload, MediaType.parse("application/json; charset=UTF-8"));
+            return RequestBody.create(MediaType.parse("application/json; charset=UTF-8"), payload);
         }
     }
 
